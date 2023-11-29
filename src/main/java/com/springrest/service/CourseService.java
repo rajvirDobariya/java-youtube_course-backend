@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.springrest.dto.CourseDTO;
 import com.springrest.entity.Course;
 import com.springrest.exception.CourseException;
@@ -18,7 +17,7 @@ public class CourseService{
 	private CourseRepository courseRepository;
 
 	public List<Course> getAll(){
-		return courseRepository.findAll();
+		return courseRepository.findAllByOrderByIdDesc();
 	}
 
 	public Course getById(long id) throws Exception {
