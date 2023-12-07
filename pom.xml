@@ -39,11 +39,11 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!-- This dependency will be included only in the development environment -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>

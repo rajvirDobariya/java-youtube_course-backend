@@ -11,7 +11,7 @@ import com.springrest.service.CourseService;
 
 @RestController
 @RequestMapping("/courses")
-@CrossOrigin
+//@CrossOrigin
 public class CourseController {
 
     @Autowired
