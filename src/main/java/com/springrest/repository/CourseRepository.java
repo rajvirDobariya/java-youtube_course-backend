@@ -6,7 +6,7 @@ import com.springrest.entity.Course;
 
 import java.util.List;
 
-public interface CourseRepository extends JpaRepository<Course, Long> {
+public interface CourseRepository extends JpaRepository<Course, Integer> {
 
 	public Course findById(long id);
 	public List<Course> findAllByOrderByIdDesc();
