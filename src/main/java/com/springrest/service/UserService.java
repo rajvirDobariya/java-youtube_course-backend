@@ -1,35 +1,28 @@
 package com.springrest.service;
 
-import com.springrest.entity.UserInfo;
-import com.springrest.repository.UserInfoRepository;
+
+import com.springrest.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
-
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
+
     @Autowired
-    private UserInfoRepository userInfoRepository;
+    private PasswordEncoder encoder;
 
+    @Autowired
+    private UserRepository userRepository;
 
-    public List<UserInfo> getAllUsers() {
-        return userInfoRepository.findAll();
-    }
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-    public UserInfo getUserById(int id) {
-        return userInfoRepository.findById(id).orElse(null);
-    }
-    public void createUser(UserInfo user) {
-        userInfoRepository.save(user);
-    }
+        System.out.println("In the user details service");
 
-    public void updateUser(UserInfo user) {
-        userInfoRepository.save(user);
-    }
-
-    public void deleteUser(int id) {
-        userInfoRepository.deleteById(id);
+        return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("user is not valid"));
     }
 }

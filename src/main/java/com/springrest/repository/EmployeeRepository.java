@@ -1,6 +1,5 @@
 package com.springrest.repository;
 
-import com.springrest.entity.Course;
 import com.springrest.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 

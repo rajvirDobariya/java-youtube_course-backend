@@ -1,13 +1,13 @@
 package com.springrest.service;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import com.springrest.dto.CourseDTO;
 import com.springrest.entity.Course;
 import com.springrest.exception.CourseException;
 import com.springrest.repository.CourseRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 

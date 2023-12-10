@@ -1,6 +1,5 @@
 package com.springrest.controller;
 
-import com.springrest.dto.CourseDTO;
 import com.springrest.entity.Employee;
 import com.springrest.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;

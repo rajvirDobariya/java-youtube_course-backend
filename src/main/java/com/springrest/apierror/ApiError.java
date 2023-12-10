@@ -1,8 +1,7 @@
 package com.springrest.apierror;
 
-import org.springframework.http.HttpStatus;
-
 import lombok.Data;
+import org.springframework.http.HttpStatus;
 
 @Data
 public class ApiError {

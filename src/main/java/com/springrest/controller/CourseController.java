@@ -1,26 +1,21 @@
 package com.springrest.controller;
 
-import com.springrest.entity.UserInfo;
-import com.springrest.repository.UserInfoRepository;
+import com.springrest.dto.CourseDTO;
+import com.springrest.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.springrest.dto.CourseDTO;
-import com.springrest.service.CourseService;
-
 
 @RestController
 @RequestMapping("/courses")
-//@CrossOrigin
+@CrossOrigin
 public class CourseController {
 
     @Autowired
     CourseService courseService;
 
-    @Autowired
-    UserInfoRepository userDetailsRepository;
 
     @GetMapping("/home")
     public ResponseEntity<Object> testing() {
@@ -29,6 +24,8 @@ public class CourseController {
 
     @GetMapping
     public ResponseEntity<Object> getAllCourses() {
+
+        System.out.println("called...");
         return new ResponseEntity<Object>(courseService.getAll(), HttpStatus.OK);
     }
 
